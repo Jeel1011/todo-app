@@ -1,0 +1,38 @@
+@media (max-width: 1098px) {
+    .todo-app__container{
+        width: calc(100% - 10%)
+    }
+    .todo-app__heading-text{
+        font-size: 2rem;
+    }
+    .todo-app__container-work-actions {
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .todo-app__container-work-actions .filters {
+        padding: 1.5rem;
+        background: var(--list-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .todo-app__container-drag-drop{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--grey-color);
+        margin-top: 100px;
+    }
+
+    .todo-app__container-work-actions .filters .filter-btns {
+        margin-right: 20px; /* Add gap between filter buttons */
+    }
+}

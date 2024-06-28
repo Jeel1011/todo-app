@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>todo-app</title>
+	<!-- CSS file -->
+	<link rel="stylesheet" href="./CSS/style.css">
+	<!-- responsive css file -->
+	<link rel="stylesheet" href="./CSS/responsive.css">
+	<!-- fonts css file -->
+	<link rel="stylesheet" href="./CSS/fonts.css">
+</head>
+<body>
+	<main class="todo-app">
+		<section class="todo-app__container">
+			<header class="todo-app__container--header-section">
+				<h1 class="todo-app__heading-text">todo</h1>
+				<button class="theme-toggle todo-app__light-theme-button" ><img src="./images/light-mode-logo.svg" alt="light mode theme"></button>
+				<button class="theme-toggle todo-app__dark-theme-button" style="display: none;"><img src="./images/dark-mode-logo.svg" alt="dark theme mode"></button>
+			</header>
+			<form class="todo-app__container-input-field" id="todo-form">
+				<div class="todo-app__container-input-circle-shape"></div>
+				<input type="text" placeholder="Add a new task.. " class="todo-app__container-input-text" id="todo-app__container-input-text" />
+			</form>
+			<div class="todo-app__container-work-feild">
+				<ul class="todo-app__container-work-list" id="todo-list"></ul>
+				<div class="todo-app__container-work-actions">
+					<p class="left-item"><span id="left-item-number">0</span> items left</p>
+					<div class="filters">
+						<a  class="filter-btns all-active">All</a>
+						<a  class="filter-btns active-work">Active</a>
+						<a class="filter-btns completed-btn">Completed</a>
+					</div>
+					<a class="clear-completed-btn">Clear Completed</a>
+				</div>
+			</div>
+			<p class="todo-app__container-drag-drop">Drag and drop to reorder list</p>
+		</section>
+	</main>
+	<!-- script file -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./JS/script.js"></script>
+</body>
+</html>

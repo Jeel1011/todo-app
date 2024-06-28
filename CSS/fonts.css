@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("../assets/Fonts/Josefin_Sans/static/JosefinSans-Bold.woff") format("woff");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Josefin Sans";
+    src: url("../assets/Fonts/Josefin_Sans/static/JosefinSans-Regular.woff") format("woff");
+    font-weight: 400;
+}

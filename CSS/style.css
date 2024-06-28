@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;   
+}
+:root{
+    --list-bg-color: #25273C;
+    --dark-bg-color: #000;
+    --text-color: #FFF;
+    --blue-color: #74B5F7;
+    --prple-color: #9E75ED;
+    --grey-color: #4E5065;
+    --linear-color: linear-gradient(61deg, rgba(87, 82, 249, 0.6), rgba(140, 99, 216, 0.5));
+}
+
+/* Light theme styles */
+.light-theme {
+    /* Add styles for the light theme here */
+    --dark-bg-color: #fff;
+    --list-bg-color: #b4b6c1;
+    --text-color: #000;
+    background-image: linear-gradient(61deg, rgba(87, 82, 249, 0.6), rgba(140, 99, 216, 0.5)),  url('../images/light-mode-bg-desktop.jpg');;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    --list-bg-color: #25273C;
+    --dark-bg-color: #000;
+    --text-color: #FFF;
+}
+
+body{
+    background-image: linear-gradient(61deg, rgba(87, 82, 249, 0.6), rgba(140, 99, 216, 0.5)),  url('../images/dark-mode-bg-desktop.jpg');;
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--dark-bg-color);
+}
+.todo-app{
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-app__container{
+    width: calc(100% - 65%)
+}
+
+.todo-app__container--header-section{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-top: 75px;
+}
+.todo-app__heading-text{
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: .8rem;
+    color: var(--text-color);
+}
+.todo-app__light-theme-button, .todo-app__dark-theme-button{
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* input tag for add item */
+.todo-app__container-input-field{
+    padding: 20px;
+    align-items: center;
+    background-color: var(--list-bg-color);
+    display: flex;
+    height: 63px;
+    justify-content: space-between;
+    margin-top: 48px;
+    margin-bottom: 30px;
+    border-radius: 0.3rem;
+    box-shadow: 5px 30px 40px 0 rgba(0, 0, 0, 0.2);
+}
+.todo-app__container-input-circle-shape{
+    border-radius: 50%;
+    border: 2px solid var(--grey-color);
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.todo-app__container-input-text{
+    border-radius: 8px;
+    flex: 1;
+    padding: 15px 20px;
+    color: var(--text-color);
+    font-size: 18px;
+    background: transparent;
+}
+.todo-app__container-input-text:hover{
+    border: 1px solid var(--grey-color);
+}
+
+/* list of item */
+.todo-app__container-work-feild{
+    border-radius: 10px;
+    font-size: .8rem;
+    color: var(--grey-color);
+    box-shadow: 5px 30px 40px 0 rgba(0, 0, 0, 0.2);
+}
+.todo-app__container-work-list{
+    background: var(--list-bg-color);
+    border-bottom: 1px solid var(--grey-color);
+    list-style: none;
+    cursor: pointer;
+}
+.todo-app__container-work-list li{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--grey-color);
+    font-size: 18px;
+    background: transparent;
+}
+
+.todo-app__container-work-list li.canceled .todo-app__container-input-circle-shape {
+    border-color: transparent; /* Change border color when task is canceled */
+    background: linear-gradient(10deg, rgba(87, 82, 249, 0.6), rgba(140, 99, 216, 0.5)); /* Change background color when task is canceled */
+}
+
+.todo-app__container-work-list li.canceled .todo-app__container-input-circle-shape::before {
+    content: "";
+    position: absolute;
+    background-position: 100%;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/check-icon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.todo-app__container-work-list li:hover .todo-app__container-cancel-icon{
+    background-image: url("../images/cancel-icon.svg");
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    visibility: visible;
+}
+
+.canceled {
+    text-decoration: line-through;
+    color: var(--grey-color);
+}
+.todo-app__container-work-list li.canceled {
+    opacity: 1;
+    color: var(--grey-color);
+    transition: opacity 0.5s ease-in-out;
+}
+.todo-app__container-work-list li.canceled-remove {
+    animation: slideOutRight 0.5s forwards;
+}
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* work action to task */
+.todo-app__container-work-actions {
+    padding: 1.5rem;
+    background: var(--list-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+}
+.filter-btns {
+    cursor: pointer;
+    margin-right: 10px;
+}
+.clear-completed-btn{
+    cursor: pointer;
+}
+
+.filter-btns.active {
+    color: blue;/* Your active button text color */;
+}
+.clear-completed-btn:hover, .filter-btns:hover{
+    color: var(--text-color);
+}
+
+/* drag and drop text */
+.todo-app__container-drag-drop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey-color);
+    margin-top: 20px;
+}
